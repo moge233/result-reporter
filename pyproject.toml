@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=80.9.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "result-reporter"
+version = "0.0.1"
+description = "Create daily result reports from DRF text charts"
+authors = [
+    { name = "Matt" }
+]
+readme = "README.md"
+license = { text = "GPL" }
+requires-python = ">=3.13"
+dependencies = [
+]
