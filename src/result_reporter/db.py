@@ -6,8 +6,8 @@ from mssql_python.exceptions import IntegrityError
 
 from mssql_python import connect, Connection, Cursor
 
-from coursetype import CourseType
-from racetype import RaceType
+from .coursetype import CourseType
+from .racetype import RaceType
 
 
 class ResultDatabaseManager:

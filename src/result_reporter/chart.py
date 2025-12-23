@@ -3,7 +3,7 @@
 
 from pydrf.textchart import Header, RaceData, StarterPerformanceData
 
-from race import Race
+from .race import Race
 
 
 class Chart:

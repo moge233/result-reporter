@@ -11,9 +11,9 @@ from openpyxl.styles import Alignment, Font
 from openpyxl.worksheet.worksheet import Worksheet
 from pydrf.textchart import Header, RaceData, StarterPerformanceData, RecordType, CourseCodes
 
-from chart import Chart
-from coursetype import CourseType
-from report import BrohamerReport, ShakeUpReport, DEFAULT_MAXIMUM_SPRINT_DISTANCE
+from .chart import Chart
+from .coursetype import CourseType
+from .report import BrohamerReport, ShakeUpReport, DEFAULT_MAXIMUM_SPRINT_DISTANCE
 
 
 TAKEOUT_PCT: float = 0.2
