@@ -96,7 +96,7 @@ class BrohamerReport(Report):
             self.fx = nan
             self.energy = nan
         elif self.distance <= DEFAULT_MAXIMUM_SPRINT_DISTANCE:
-            if not self.c1:
+            if not self.c1 or not self.c2:
                 self.fr1 = nan
                 self.fr2 = nan
                 self.fr3 = nan
@@ -116,7 +116,7 @@ class BrohamerReport(Report):
                 self.fx = round((self.fr1 + self.fr3) / 2, 1)
                 self.energy = round(self.ep / (self.ep + self.fr3), 2)
         else:
-            if not self.c1:
+            if not self.c1 or not self.c2:
                 self.fr1 = nan
                 self.fr2 = nan
                 self.fr3 = nan
