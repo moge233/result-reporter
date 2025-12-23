@@ -18,7 +18,7 @@ dependencies = [
     "openpyxl==3.1.5",
     "pandas==2.3.3",
     "pycparser==2.23",
-    "result_reporter @ git+https://github.com/moge233/result_reporter",
+    "result_reporter @ git+https://github.com/moge233/result-reporter",
     "PyJWT==2.10.1",
     "python-dateutil==2.9.0.post0",
     "python-dotenv==1.2.1",
