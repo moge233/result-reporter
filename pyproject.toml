@@ -13,21 +13,21 @@ readme = "README.md"
 license = { text = "GPL" }
 requires-python = ">=3.13"
 dependencies = [
-    mssql-python==1.0.0
-    numpy==2.3.5
-    openpyxl==3.1.5
-    pandas==2.3.3
-    pycparser==2.23
-    -e git+https://github.com/moge233/pydrf@08bda4158822dee466391dde67f68a05aadaea9d#egg=pydrf
-    PyJWT==2.10.1
-    python-dateutil==2.9.0.post0
-    python-dotenv==1.2.1
-    pytz==2025.2
-    requests==2.32.5
-    six==1.17.0
-    typing_extensions==4.15.0
-    tzdata==2025.2
-    urllib3==2.6.2
+    "mssql-python==1.0.0",
+    "numpy==2.3.5",
+    "openpyxl==3.1.5",
+    "pandas==2.3.3",
+    "pycparser==2.23",
+    "-e git+https://github.com/moge233/pydrf@08bda4158822dee466391dde67f68a05aadaea9d#egg=pydrf",
+    "PyJWT==2.10.1",
+    "python-dateutil==2.9.0.post0",
+    "python-dotenv==1.2.1",
+    "pytz==2025.2",
+    "requests==2.32.5",
+    "six==1.17.0",
+    "typing_extensions==4.15.0",
+    "tzdata==2025.2",
+    "urllib3==2.6.2",
 ]
 
 [tool.setuptools.packages.find]
