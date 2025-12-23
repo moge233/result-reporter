@@ -86,7 +86,16 @@ class BrohamerReport(Report):
         self.c1: float = c1
         self.c2: float = c2
         self.fc: float = fc
-        if self.distance <= DEFAULT_MAXIMUM_SPRINT_DISTANCE:
+        if self.distance < 5.0:
+            self.fr1 = nan
+            self.fr2 = nan
+            self.fr3 = nan
+            self.ep = nan
+            self.sp = nan
+            self.ap = nan
+            self.fx = nan
+            self.energy = nan
+        elif self.distance <= DEFAULT_MAXIMUM_SPRINT_DISTANCE:
             if not self.c1:
                 self.fr1 = nan
                 self.fr2 = nan
