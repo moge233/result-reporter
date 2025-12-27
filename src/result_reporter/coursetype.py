@@ -99,6 +99,8 @@ class CourseType(Enum):
             return 'Outer Turf'
         elif self is CourseType.TURF:
             return 'Turf'
+        elif self is CourseType.DOWNHILL_TURF:
+            return 'Downhill Turf'
         else:
             return 'Dirt'  # as the default
 
