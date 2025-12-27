@@ -92,7 +92,7 @@ class ResultDatabaseManager:
             results: list[str | float] = [
                 result for result in fetch_result[0]
             ]
-            course_str: str = course.course_to_str().upper()
+            course_str: str = course.course_to_str().upper().replace(' ', '_')
             temp = list(zip(column_names, results))
             ret_list = [
                 val[1] for val in temp if course_str in val[0]
