@@ -1,13 +1,30 @@
 #! python3
 
 
+from abc import ABC
 from math import nan
-from mssql_python.exceptions import IntegrityError
 
 from mssql_python import connect, Connection, Cursor
+from mssql_python.exceptions import IntegrityError
+from pandas import DataFrame
 
 from .coursetype import CourseType
 from .racetype import RaceType
+
+
+class ResultDataBaseTable(ABC):
+    def __init__(self, track_code: str, data_frame: DataFrame):
+        super().__init__()
+        self.track_code: str = track_code
+        self._data_frame: DataFrame = data_frame
+
+    def get_data(self) -> DataFrame:
+        return self._data_frame.copy()
+
+
+class ResultDataBaseBrohamerTable(ResultDataBaseTable):
+    def __init__(self, track_code: str, data_frame: DataFrame):
+        super().__init__(track_code, data_frame)
 
 
 class ResultDatabaseManager:
@@ -106,3 +123,15 @@ class ResultDatabaseManager:
             if type(ret[-1]) is str:
                 ret[-1] = ret[-1].rstrip()
         return ret
+
+    def get_table(self, track_code: str) -> ResultDataBaseTable | None:
+        table_name: str = f'{track_code.upper()}_BrohamerGuide'
+        query: str = f'SELECT * FROM {table_name}'
+        cursor: Cursor = self.connection.cursor()
+        cursor.execute(query)
+        if cursor.description:
+            fetch_result = cursor.fetchall()
+            column_names = [description[0] for description in cursor.description]
+            data_frame: DataFrame = DataFrame(fetch_result, columns=column_names)
+            return ResultDataBaseBrohamerTable(track_code, data_frame)
+        return None
