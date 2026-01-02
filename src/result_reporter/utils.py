@@ -449,7 +449,7 @@ def create_hearts_guide(charts: list[Chart], path: str) -> None:
         reports: list[ShakeUpReport] = get_shakeup_reports(chart)
         row1: list[str | float] = []
         row2: list[str | float] = []
-        date: datetime = datetime.strptime(chart.race_date, '%Y%m%d')
+        date: datetime = chart.race_date
         row1.append(date.strftime('%m/%d'))
         row2.append('')
         for surface in surfaces:
@@ -635,7 +635,7 @@ def create_brohamer_guide(charts: list[Chart], path: str) -> None:
         reports: list[BrohamerReport] = get_brohamer_reports(chart)
         row1: list[str | float] = []
         row2: list[str | float] = []
-        date: datetime = datetime.strptime(chart.race_date, '%Y%m%d')
+        date: datetime = chart.race_date
         row1.append(date.strftime('%m/%d'))
         row2.append('')
         for surface in surfaces:

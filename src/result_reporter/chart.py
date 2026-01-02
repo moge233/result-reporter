@@ -1,6 +1,7 @@
 #! python3
 
 
+from datetime import datetime
 from pydrf.textchart import Header, RaceData, StarterPerformanceData
 
 from .race import Race
@@ -9,7 +10,7 @@ from .race import Race
 class Chart:
     def __init__(self, header: Header, races: list[RaceData], starters: list[StarterPerformanceData]):
         self.track_code: str = header.track_code
-        self.race_date: str = header.race_date
+        self.race_date: datetime = datetime.strptime(header.race_date, '%Y%m%d')
         self.number_of_races: int = header.number_of_races
         self.races: list[Race] = []
         for race in races:
