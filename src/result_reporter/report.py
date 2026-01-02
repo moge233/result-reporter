@@ -148,10 +148,3 @@ class BrohamerReport(Report):
         for k, v in vars(self).items():
             ret += f'{k}={v}, '
         return f'BrohamerReport({ret[:-2]})'
-
-
-class DailyBrohamerReport:
-    def __init__(self, all_surfaces: list[str], reports: list[ShakeUpReport]):
-        self.surfaces: list[str] = all_surfaces
-        for report in reports:
-            pass
