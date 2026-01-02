@@ -57,13 +57,6 @@ class ShakeUpReport(Report):
         return f'ShakeUpReport({ret[:-2]})'
 
 
-class DailyShakeUpReport:
-    def __init__(self, all_surfaces: list[str], reports: list[ShakeUpReport]):
-        self.surfaces: list[str] = all_surfaces
-        for report in reports:
-            pass
-
-
 class BrohamerReport(Report):
     def __init__(self, key: str, cls: str, sex: str, age: str, claiming_price: float, purse: float, race: int,
                  surface: str, course: str, distance: float, number: int, post: int,
